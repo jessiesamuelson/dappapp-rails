@@ -1,8 +1,8 @@
 var ip = "localhost";
-var ws = new WebSocket('ws://' + ip + ':3000');
+var ws = new WebSocket('ws://' + ip + ':4000');
 
-//start the app with the cursor in the input box
-document.querySelector('.inputMessage').focus();
+
+
 
 function appendToChat(msg) {
   var messages = document.querySelector('.messages');
