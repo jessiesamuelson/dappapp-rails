@@ -20,6 +20,7 @@
   <%= @user.username %>
 </p>
 
+
 <div id="chatsection">
   <div class="chatArea">
     <ul class="messages">
@@ -29,6 +30,14 @@
 </div>
 
 <script src="client.js"></script>
+
+<% @tweets.each do |tweet| %>
+	<%= tweet %>
+<% end %>
+
+<%= render 'shared/tweets' %>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'All Users', users_path %>

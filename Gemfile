@@ -30,6 +30,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+# gem 'jumpstart_auth', '~> 0.6.0'
+gem 'twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

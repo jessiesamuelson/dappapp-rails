@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  def current_user
+    @current_user ||= session[:user_id] ? User.find_by_id(session[:user_id]) : nil
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -25,6 +29,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @user = current_user
+    # @tweets = @user.get_tweets
   end
 
   # GET /users/new
