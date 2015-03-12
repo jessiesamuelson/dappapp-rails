@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 # -- Jessie
 jessie = User.create!({
   name: 'Jessie',
@@ -50,4 +41,45 @@ carolyn = User.create!({
   company: 'dapp-ux',
   username: 'carebear',
   password: '11111'
+})
+
+
+# -- Message 1
+message1 = Message.create!({
+  sender_id: 1,
+  recipient_id: 2,
+  subject: 'greetings',
+  content: 'good morning mina!'
+})
+
+# -- Message 2
+message2 = Message.create!({
+  sender_id: 5,
+  recipient_id: 1,
+  subject: 'dolphins',
+  content: "aren't they swell"
+})
+
+# -- Message 3
+message3 = Message.create!({
+  sender_id: 2,
+  recipient_id: 3,
+  subject: 'tissues',
+  content: "i have a whole box, need one?"
+})
+
+# -- Message 4
+message4 = Message.create!({
+  sender_id: 3,
+  recipient_id: 4,
+  subject: 'pizza',
+  content: "it's best for breakfast"
+})
+
+# -- Message 5
+message5 = Message.create!({
+  sender_id: 4,
+  recipient_id: 5,
+  subject: 'dragons',
+  content: "aren't they majestic"
 })

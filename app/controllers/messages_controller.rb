@@ -9,10 +9,11 @@ class MessagesController < ApplicationController
   # GET /messages.json
   def index
     @user = current_user
-    @messages = Message.find_by(sender_id: @user.id)
+    @messages_sent = @user.sent_messages
+    @messages_received = @user.received_messages
 
     respond_to do |format|
-      format.html { render text: "Please go to messages.json" }
+      format.html { render }
       format.json { render json: @messages.to_json(include: :sender) }
     end
   end
@@ -37,6 +38,7 @@ class MessagesController < ApplicationController
     @user = current_user
     @message = Message.new(message_params)
     @message.update(sender_id: @user.id)
+    
 
     respond_to do |format|
       if @message.save

@@ -2,5 +2,25 @@
 
 <h1>Messages</h1>
 
+<p>
+  <strong>Sender:</strong>
+  <%= @message.sender.email %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @message.recipient.email %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @message.content %>
+</p>
+
 <%= link_to 'Edit', edit_message_path(@message) %> |
 <%= link_to 'Back', messages_path %>
