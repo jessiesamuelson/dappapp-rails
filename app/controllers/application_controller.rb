@@ -4,17 +4,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :load_tweets
 
-
-
   def load_tweets
-		client = Twitter::REST::Client.new do |config|
-
-      config.consumer_key = 
-      config.consumer_secret = 
-      config.access_token = 
-      config.access_token_secret = 
-
-		end
     @tweets = client.user_timeline[0..4]
+  end
+
+  private
+
+  def client
+    Twitter::REST::Client.new do |config|
+      config.consumer_key = Rails.application.secrets.consumer_key
+      config.consumer_secret = Rails.application.secrets.consumer_secret
+      config.access_token = Rails.application.secrets.access_token
+      config.access_token_secret = Rails.application.secrets.access_token_secret
+    end
   end
 end
