@@ -20,6 +20,11 @@
   <%= @user.username %>
 </p>
 
+<% @tweets.each do |tweet| %>
+	<%= tweet %>
+<% end %>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'All Users', users_path %>
 <%= link_to 'Messages', messages_path %>

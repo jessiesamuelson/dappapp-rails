@@ -12,6 +12,9 @@
 	  <%= current_user.email %>
 	<% end %>
 	<%= yield %>
+
+	<%= render 'shared/tweets' %>
+
 	<% if current_user %>
 	  <%= link_to 'Log-out', login_path, method: :delete %>
 	<% end %>
