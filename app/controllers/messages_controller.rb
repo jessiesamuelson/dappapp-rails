@@ -8,14 +8,19 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @user = current_user
-    @messages_sent = @user.sent_messages
-    @messages_received = @user.received_messages
+    if current_user
+      @user = current_user
+      @messages_sent = @user.sent_messages
+      @messages_received = @user.received_messages
 
-    respond_to do |format|
-      format.html { render }
-      format.json { render json: @messages.to_json(include: :sender) }
+      respond_to do |format|
+        format.html { render }
+        format.json { render json: @messages.to_json(include: :sender) }
+      end
+    else 
+      redirect_to new_user_path
     end
+
   end
 
   # GET /messages/1
