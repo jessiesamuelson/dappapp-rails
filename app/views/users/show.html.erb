@@ -20,6 +20,16 @@
   <%= @user.username %>
 </p>
 
+<div id="chatsection">
+  <div class="chatArea">
+    <ul class="messages">
+    </ul>
+  </div>
+  <input class="inputMessage" placeholder="write monosodium glutamate here..."/>
+</div>
+
+<script src="client.js"></script>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'All Users', users_path %>
 <%= link_to 'Messages', messages_path %>
