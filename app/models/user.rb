@@ -22,7 +22,8 @@ opts = {
 	# etc
 }
 
-def get_tweets() 
-	current_user.tweets(count: 10)
+	def get_tweets() 
+		current_user.tweets(count: 10)
 
+	end
 end
