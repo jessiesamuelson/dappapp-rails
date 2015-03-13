@@ -2,7 +2,7 @@
 jessie = User.create!({
   name: 'Jessie',
   email: 'jessie@gmail.com',
-  company: 'dapp-wdi',
+  company: 'DAPP-WDI',
   username: 'messyjessie',
   password: '11111'
 })
@@ -11,7 +11,7 @@ jessie = User.create!({
 mina = User.create!({
   name: 'Mina',
   email: 'mina@gmail.com',
-  company: 'dapp-wdi',
+  company: 'DAPP-WDI',
   username: 'japaranian',
   password: '11111'
 })
@@ -20,7 +20,7 @@ mina = User.create!({
 will = User.create!({
   name: 'Will',
   email: 'will@gmail.com',
-  company: 'dapp-wdi',
+  company: 'DAPP-WDI',
   username: 'sharksandwich',
   password: '11111'
 })
@@ -29,7 +29,7 @@ will = User.create!({
 megan = User.create!({
   name: 'Megan',
   email: 'megan@gmail.com',
-  company: 'dapp-pmi',
+  company: 'DAPP-PMI',
   username: 'elcapitan',
   password: '11111'
 })
@@ -38,7 +38,7 @@ megan = User.create!({
 carolyn = User.create!({
   name: 'Carolyn',
   email: 'carolyn@gmail.com',
-  company: 'dapp-ux',
+  company: 'DAPP-UX',
   username: 'carebear',
   password: '11111'
 })

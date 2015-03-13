@@ -32,6 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'jumpstart_auth', '~> 0.6.0'
 gem 'twitter'
+gem 'twitter_oauth'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

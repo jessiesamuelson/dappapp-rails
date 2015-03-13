@@ -5,17 +5,23 @@ class ApplicationController < ActionController::Base
   before_filter :load_tweets
 
   def load_tweets
-    @tweets = client.user_timeline[0..4]
+    @tweets = twitter_accessor.client.user_timeline.take(1)
   end
 
   private
 
   def client
-    Twitter::REST::Client.new do |config|
+    @client ||= Twitter::REST::Client.new do |config|
       config.consumer_key = Rails.application.secrets.consumer_key
       config.consumer_secret = Rails.application.secrets.consumer_secret
-      config.access_token = Rails.application.secrets.access_token
-      config.access_token_secret = Rails.application.secrets.access_token_secret
+      # config.access_token = Rails.application.secrets.access_token
+      # config.access_token_secret = Rails.application.secrets.access_token_secret
     end
+  end
+
+  def twitter_accessor
+    @twitter_accessor ||= TwitterAccessor.new(current_user)
+      # config.access_token = Rails.application.secrets.access_token
+      # config.access_token_secret = Rails.application.secrets.access_token_secret
   end
 end
