@@ -1,39 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
-
-
-<div id="chatsection">
-  <div class="chatArea">
-    <ul class="messages">
-    </ul>
+<section>
+<!--   <div>
+    <strong>Email:</strong>
+    <%= @user.email %>
   </div>
-  <input class="inputMessage" placeholder="write monosodium glutamate here..."/>
+
+  <div>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </div>
+
+  <div>
+    <strong>Company:</strong>
+    <%= @user.company %>
+  </div> -->
+
+  <div>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </div>
+</section>
+
+<%= render 'shared/tweets' %>
+
+<div class='col-md-4' style="border:5px solid red">
+  NY Times feed goes here
 </div>
+
+<div class="col-md-4" style="border:5px solid green">
+  <div>
+    <div class="chatArea">
+      <ul class="messages"> </ul>
+    </div>
+    <input class="inputMessage" placeholder="write monosodium glutamate here..."/>
+  </div>
+</div>
+
 
 <script src="client.js"></script>
 
 
 
-<%= render 'shared/tweets' %>
 
 
 
