@@ -4,7 +4,9 @@ jessie = User.create!({
   email: 'jessie@gmail.com',
   company: 'DAPP-WDI',
   username: 'messyjessie',
-  password: '11111'
+  password: '11111',
+  oauth_token: '3084952463-3hH077jZw47mJJEpu8hxlMinILr2r1kWy5nILyd',
+  oauth_secret: 'p88RDUYsRKyHjocexsVyBiZTfpr4Q6CQcAamBldnmwmc6'
 })
 
 # -- Mina
