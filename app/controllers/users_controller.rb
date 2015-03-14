@@ -27,11 +27,15 @@ class UsersController < ApplicationController
   end
   
   def twitter_login
-    if current_user.oauth_token
-      redirect_to "/users/#{current_user.id}"
-    else  
-      session[:twitter_request_token] = twitter_accessor.get_request_token 
-      redirect_to session[:twitter_request_token].authorize_url
+    if current_user
+      if current_user.oauth_token
+        redirect_to "/users/#{current_user.id}"
+      else  
+        session[:twitter_request_token] = twitter_accessor.get_request_token 
+        redirect_to session[:twitter_request_token].authorize_url
+      end
+    else 
+      redirect_to "/users/new"
     end
   end
 
@@ -122,6 +126,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :name, :username, :company, :password, :password_confirmation)
+      params.require(:user).permit(:email, :name, :username, :company, :oauth_token, :oauth_secret, :password, :password_confirmation)
     end
 end

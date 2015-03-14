@@ -2,13 +2,15 @@ class TwitterAccessor
 	attr_reader :client
 
 	def initialize(user)
-		if user.oauth_token
-			@client = TwitterOAuth::Client.new(
-		    :consumer_key => Rails.application.secrets.consumer_key,
-		    :consumer_secret => Rails.application.secrets.consumer_secret,
-		    :token => user.oauth_token,
-		    :secret => user.oauth_secret
-			)
+		if user
+			if user.oauth_token
+				@client = TwitterOAuth::Client.new(
+			    :consumer_key => Rails.application.secrets.consumer_key,
+			    :consumer_secret => Rails.application.secrets.consumer_secret,
+			    :token => user.oauth_token,
+			    :secret => user.oauth_secret
+				)
+			end
 		else
 			@client = TwitterOAuth::Client.new(
 		    :consumer_key => Rails.application.secrets.consumer_key,

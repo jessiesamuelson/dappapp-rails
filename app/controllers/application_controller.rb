@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   before_filter :load_tweets
 
   def load_tweets
-    @tweets = twitter_accessor.client.user_timeline.take(1)
+    if twitter_accessor.client
+      @tweets = twitter_accessor.client.user_timeline.take(1)
+    end
   end
 
   private
