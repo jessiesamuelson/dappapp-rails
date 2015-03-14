@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -34,8 +35,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'twitter'
 gem 'twitter_oauth'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
+
+gem 'rails-assets-bootstrap'
+gem 'bootstrap-sass'
+# gem 'bootstrap-sass', '~> 3.2.0'
+# gem 'autoprefixer-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
