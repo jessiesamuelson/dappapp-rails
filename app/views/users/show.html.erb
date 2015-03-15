@@ -22,7 +22,9 @@
   </div>
 </section>
 
-<%= render 'shared/tweets' %>
+<% if @user.oauth_token %>
+  <%= render 'shared/tweets' %>
+<% end %>
 
 <div class='col-md-4' style="border:5px solid red">
   NY Times feed goes here

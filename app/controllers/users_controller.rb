@@ -27,16 +27,13 @@ class UsersController < ApplicationController
   end
   
   def twitter_login
-    if current_user
-      if current_user.oauth_token
-        redirect_to "/users/#{current_user.id}"
-      else  
-        session[:twitter_request_token] = twitter_accessor.get_request_token 
-        redirect_to session[:twitter_request_token].authorize_url
-      end
-    else 
-      redirect_to "/users/new"
+    if current_user && current_user.oauth_token
+      redirect_to "/users/#{current_user.id}"
+    else  
+      session[:twitter_request_token] = twitter_accessor.get_request_token 
+      redirect_to session[:twitter_request_token].authorize_url
     end
+
   end
 
   def twitter_callback
