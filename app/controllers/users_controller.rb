@@ -5,6 +5,12 @@ class UsersController < ApplicationController
     @current_user ||= session[:user_id] ? User.find_by_id(session[:user_id]) : nil
   end
 
+  def dirty
+    Rails.logger.info "Wtf mate: #{session.to_json}"
+    Rails.logger.info "Wtf mate: #{current_user.class} #{current_user.as_json}"
+    Rails.logger.info "Wtf mate: #{params}"
+  end
+
   # GET /users
   # GET /users.json
   def index
