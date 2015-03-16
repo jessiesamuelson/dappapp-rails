@@ -21,7 +21,12 @@ window.onload = function(){
     input.addEventListener("keypress", function(evt){
       if (evt.keyCode === 13){
 
-        var url = "http://localhost:3000/users/3.json";
+        // var id = $('#user-id').innerHTML;
+
+        var idtext = document.getElementById('user-id').innerHTML.trim();
+        var idnum = parseInt(idtext);
+        console.log(idnum);
+        var url = "http://localhost:3000/users/" + idnum + ".json"
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.addEventListener('load', function(e) {

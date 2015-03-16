@@ -15,11 +15,18 @@
     <strong>Company:</strong>
     <%= @user.company %>
   </div> -->
+  <div style="display: inline-block">
+    
+    <div id="user-id">
+      <%= @user.id %>
+    </div>
 
-  <div>
-    <strong>Username:</strong>
-    <%= @user.username %>
+    <div>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </div>
   </div>
+  
 </section>
 
 <% if @user.oauth_token %>
