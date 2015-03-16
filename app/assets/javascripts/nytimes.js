@@ -1,12 +1,11 @@
 console.log('nytimes.js running')
 
-var baseURL = "http://api.nytimes.com/svc/topstories/v1/home.json?api-key=";
-  var apiKey = 
+var baseURL = "/nytimes";
 
 function getResults() {
 
   $.ajax({
-    url: baseURL + apiKey,
+    url: baseURL,
     dataType: 'json',
     success: 
     renderResults
