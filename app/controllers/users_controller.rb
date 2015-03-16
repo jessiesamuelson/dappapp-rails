@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     Rails.logger.info "Wtf mate: #{session.to_json}"
     Rails.logger.info "Wtf mate: #{current_user.class} #{current_user.as_json}"
     Rails.logger.info "Wtf mate: #{params}"
+    render nothing: true
   end
 
   # GET /users
