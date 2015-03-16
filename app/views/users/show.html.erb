@@ -15,11 +15,18 @@
     <strong>Company:</strong>
     <%= @user.company %>
   </div> -->
+  <div style="display: inline-block">
+    
+    <div id="user-id">
+      <%= @user.id %>
+    </div>
 
-  <div>
-    <strong>Username:</strong>
-    <%= @user.username %>
+    <div>
+      <strong>Username:</strong>
+      <%= @user.username %>
+    </div>
   </div>
+  
 </section>
 
 <% if @user.oauth_token %>
@@ -27,20 +34,23 @@
 <% end %>
 
 <div class='col-md-4' style="border:5px solid red">
-  NY Times feed goes here
+  <ul id='nytimes'></ul>
 </div>
 
 <div class="col-md-4" style="border:5px solid green">
   <div>
-    <div class="chatArea">
-      <ul class="messages"> </ul>
+    <div id="chatsection">
+      <div class="chatArea">
+        <ul class="messages" id="messages"> </ul>
+      </div>
+      <input class="inputMessage" id="input" placeholder="write monosodium glutamate here..."/>
+      <button id="button" name="button">XXX</button>
     </div>
-    <input class="inputMessage" placeholder="write monosodium glutamate here..."/>
   </div>
 </div>
 
 
-<script src="client.js"></script>
+<%= javascript_include_tag 'client.js' %>
 
 
 
