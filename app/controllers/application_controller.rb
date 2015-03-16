@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   def load_tweets
     if twitter_accessor.client
-      @tweets = twitter_accessor.client.user_timeline.take(5)
+      @tweets = twitter_accessor.client.home_timeline.take(5)
+      # user_timeline.take(5)
     end
   end
 
