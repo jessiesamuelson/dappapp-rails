@@ -26,6 +26,10 @@
       <%= @user.username %>
     </div>
   </div>
+
+<div id="header">
+  <div id="logo"><img src="/logo.png"></div>
+</div>
   
 </section>
 
@@ -33,12 +37,12 @@
   <%= render 'shared/tweets' %>
 <% end %>
 
-<div class='col-md-4' style="border:5px solid red">
+<div class='col-md-4 times-div'>
   <ul id='nytimes'></ul>
 </div>
 
-<div class="col-md-4" style="border:5px solid green">
-  <div>
+<!-- <div class="col-md-4" style="border:5px solid green">
+  <div> -->
     <div id="chatsection">
       <div class="chatArea">
         <ul class="messages" id="messages"> </ul>
@@ -46,8 +50,8 @@
       <input class="inputMessage" id="input" placeholder="write monosodium glutamate here..."/>
       <button id="button" name="button">XXX</button>
     </div>
-  </div>
-</div>
+<!--   </div>
+</div> -->
 
 
 <%= javascript_include_tag 'client.js' %>
@@ -56,7 +60,8 @@
 
 
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'All Users', users_path %>
-<%= link_to 'Messages', messages_path %>
+<div class="footer">
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'All Users', users_path %>
+  <%= link_to 'Messages', messages_path %>
+</div>

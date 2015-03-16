@@ -1,10 +1,16 @@
-<section id="tweets" class="col-md-4" style="border:5px solid black">
-  <ul>
-  	<% if @tweets %>
-	    <% @tweets.each do |tweet| %>
-	    	
-	      <li><%= link_to tweet["text"], "https://www.twitter.com/#{tweet['user']['screen_name']}" %></li>
-	     <% end %>
-	  <% end %>
-  </ul>
-</section>
+<div id="container">
+	<section id="tweets" class="col-md-4">
+		<div id="tweetlist">
+			<div id="tweetHeader"></div>
+			<div id="twitter_logo"><img src="/Twitter_logo_blue.png"></div>
+		  <ul>
+		  	<% if @tweets %>
+			    <% @tweets.each do |tweet| %>
+			    	
+			      <li><%= link_to tweet["text"], "https://www.twitter.com/#{tweet['user']['screen_name']}" %></li>
+			     <% end %>
+			  <% end %>
+		  </ul>
+		</div>
+	</section>
+</div>

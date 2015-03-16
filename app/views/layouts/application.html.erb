@@ -15,15 +15,12 @@
 
 	<% if current_user %>
 	  <%= current_user.email %>
+	  <br>
+		<%= link_to 'Log-out', login_path, method: :delete %>
 	<% end %>
 
 
 	<%= yield %>
-
-
-	<% if current_user %>
-	  <%= link_to 'Log-out', login_path, method: :delete %>
-	<% end %>
 
 </body>
 </html>

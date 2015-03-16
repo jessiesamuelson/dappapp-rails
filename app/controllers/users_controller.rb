@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "You have been logged in"
+      redirect_to user_path(@user)
     else
       render :new, notice: 'Invalid Login'
     end
@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
   
   def twitter_login
+      binding.pry
     if current_user && current_user.oauth_token
       redirect_to "/users/#{current_user.id}"
     else  

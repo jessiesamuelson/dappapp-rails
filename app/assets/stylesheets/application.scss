@@ -20,8 +20,9 @@
 
 #chatsection {
   border: 5px solid black;
-  
+  float: left;
   right: 0;
+  width: 400px;
 }
 
 html {
@@ -44,7 +45,7 @@ ul {
 }
 
 .chatArea {
-  background-color: beige;
+  background-color: skyblue;
   padding-bottom: 60px;
   border: 1px solid red;
 }
@@ -67,4 +68,60 @@ ul {
   padding-left: 10px;
   /*position: relative;*/
   width: 100%;
+}
+
+#header{
+  width: 64%;
+  text-align: center;
+}
+
+#logo img{
+  height: 90px;
+}
+
+#tweets {
+  position: relative;
+  float: left;
+  height: 200px;
+  width:32%;
+/*  min-width: 200px;
+  min-height: 420px;*/
+  width: 400px;
+  text-align: center;
+  padding: 10px;
+}
+
+#tweetlist, #articles{
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  content: "";
+  /*background-color: rgba(0,0,0,.5);*/
+  /*border: 1px solid rgba(0,0,0,.5);*/
+  border-radius: 5px;
+}
+
+
+#container{
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  /*display: inline-block;*/
+}
+
+#twitter_logo img{
+    height:50px;
+    position: relative;
+    float: left;
+}
+
+.times-div {
+  width: 400px;
+}
+.footer{
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
