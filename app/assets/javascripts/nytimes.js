@@ -13,25 +13,14 @@ function getResults() {
   });
 };
 
-function renderResults(data) {
-	function makeResult(result){
-		var $nytimes = $('.nytimes');
-		var $byline = $('<h2>').text("Byline: " + result.byline);
-		$nytimes.append($byline);
-		return $byline;
-	};
-	var $results = $("#results");
-	$results.html('');
-	if (data["results"]) {
-		var results = data["results"];
-		console.log(parseArticle(result))
+
+function renderResults(data){
+	debugger;
+	var article = {
+		abstract: data["results"][0]["abstract"],
+		byline: data["results"][0]["byline"],
+		title: data["results"][0]["title"],
+		url: data["results"][0]["url"],
+		created_date: data["results"][0]["created_date"]
 	}
 }
-
-function parseArticle(article){
-	return {
-	byline: article["byline"]
-	}
-	getResults();
-}
-
