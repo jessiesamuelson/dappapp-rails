@@ -1,5 +1,5 @@
-// var ws = new WebSocket('ws://localhost:4000');
-var ws = new WebSocket('ws:will.princesspeach.nyc:7000');
+var ws = new WebSocket('ws://localhost:4000');
+// var ws = new WebSocket('ws:will.princesspeach.nyc:7000');
 
 
 window.onload = function(){
@@ -10,53 +10,20 @@ window.onload = function(){
 
   ws.addEventListener('open', function(evt){
 
-    var button = document.getElementById('button');
+    var button = document.querySelector('button');
     var inputbox = document.querySelector('input');
 
     
 
-    button.addEventListener('click', function(){
-
-        var idtext = document.getElementById('user-id').innerHTML.trim();
-        var idnum = parseInt(idtext);
-        console.log(idnum);
-        // var url = "http://localhost:3000/users/" + idnum + ".json"
-
-        var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-        xhr.addEventListener('load', function(e) {
-          var data = xhr.responseText;
-          console.log(data);
-          var parsed = JSON.parse(data);
-          var username = document.createElement("h1")
-          var userParse = parsed["username"];
-          username.innerHTML = userParse; 
-          console.log(userParse)
-
-
-          var object = {
-          name : userParse,
-          text : inputbox.value
-          }
-          var userMessage = JSON.stringify(object);
-          console.log(userMessage);
-          ws.send(userMessage);
-          inputbox.value = "";
-
-        });
-        xhr.send();
-
-
-      // var object = {
-      //   name : name,
-      //   text : inputbox.value
-      // }
-      // var userMessage = JSON.stringify(object);
-      // ws.send(userMessage);
-      // inputbox.value = " ";
-    });
+    // button.addEventListener('click', function(){
+    //   var object = {
+    //     name : name,
+    //     text : inputbox.value
+    //   }
+    //   var userMessage = JSON.stringify(object);
+    //   ws.send(userMessage);
+    //   inputbox.value = " ";
+    // });
 
     input.addEventListener("keypress", function(evt){
       if (evt.keyCode === 13){
@@ -66,9 +33,9 @@ window.onload = function(){
         var idtext = document.getElementById('user-id').innerHTML.trim();
         var idnum = parseInt(idtext);
         console.log(idnum);
-        // var url = "http://localhost:3000/users/" + idnum + ".json"
+        var url = "http://localhost:3000/users/" + idnum + ".json"
 
-        var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
+        // var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
@@ -108,7 +75,7 @@ window.onload = function(){
       var linkmsg = parsed.text;
 
       var httpParse = parsed.text.substring(0, 5).trim();
-      if (httpParse === "http" || httpParse === "http:"){
+      if (httpParse === "http" || httpParse === "http:" || httpParse === "https"){
         var length = parsed.text.length;
         var picurl = parsed.text.substring(length-3, length);
         if (picurl === "png" || picurl === "jpg" || picurl === "bmp" || picurl === "gif"){
@@ -123,7 +90,7 @@ window.onload = function(){
 
       var messages = document.getElementById('messages');
       messages.appendChild(chatlist);
-      // messages.scrollTop = messages.scrollHeight;
+      messages.scrollTop = messages.scrollHeight;
     });
 
   });
