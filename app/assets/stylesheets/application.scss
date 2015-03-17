@@ -84,13 +84,14 @@ ul {
 #tweets {
   position: relative;
   float: left;
-  height: 200px;
+  /*height: 200px;*/
   width:32%;
 /*  min-width: 200px;
   min-height: 420px;*/
   width: 400px;
   text-align: center;
   padding: 10px;
+  overflow: scroll;
 }
 
 #tweetlist, #articles{
@@ -118,9 +119,6 @@ ul {
     float: left;
 }
 
-.times-div {
-  width: 400px;
-}
 .footer{
   position: fixed; 
   bottom: 0;
@@ -148,4 +146,10 @@ ul {
 
 .title {
   color: #0099DD;
+}
+
+.times-div {
+  width: 400px;
+  height: 700px;
+  overflow: scroll;
 }

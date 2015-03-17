@@ -23,7 +23,7 @@ function renderResults(data){
 	// 	created_date: data["results"][0]["created_date"]
 	// }
 	var ul = document.getElementById('nytimes');
-	for (var i = 0; i < 5; i++){
+	for (var i = 0; i < 19; i++){
 		var li = document.createElement("li");
 		var nytdiv = document.createElement('div');
 		li.appendChild(nytdiv);
