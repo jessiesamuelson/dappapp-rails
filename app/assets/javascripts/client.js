@@ -1,5 +1,5 @@
 // var ws = new WebSocket('ws://localhost:4000');
-var ws = new WebSocket('http://will.princesspeach.nyc:7000');
+var ws = new WebSocket('ws:http://will.princesspeach.nyc:7000');
 
 
 window.onload = function(){
