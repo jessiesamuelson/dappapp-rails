@@ -56,12 +56,11 @@
 
 <%= javascript_include_tag 'client.js' %>
 
-
-
+<% if !@user.oauth_token %>
+  <%= button_to "LoginWithTwitter", '/users/twitterlogin', method: "get" %>
+<% end %>
 
 
 <div class="footer">
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'All Users', users_path %>
-  <%= link_to 'Messages', messages_path %>
+  
 </div>

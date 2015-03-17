@@ -1,6 +1,11 @@
-var ws = new WebSocket('ws://localhost:4000');
+// var ws = new WebSocket('ws://localhost:4000');
 
 window.onload = function(){
+  var idtext = document.getElementById('user-id').innerHTML.trim();
+  var idnum = parseInt(idtext);
+
+  var ws = new WebSocket( "http://dapperdragons.herokuapp.com/users/" + idnum )
+
   ws.addEventListener('open', function(evt){
 
     var button = document.querySelector('button');
@@ -26,7 +31,10 @@ window.onload = function(){
         var idtext = document.getElementById('user-id').innerHTML.trim();
         var idnum = parseInt(idtext);
         console.log(idnum);
-        var url = "http://localhost:3000/users/" + idnum + ".json"
+        // var url = "http://localhost:3000/users/" + idnum + ".json"
+
+        var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
+
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
         xhr.addEventListener('load', function(e) {

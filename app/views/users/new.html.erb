@@ -1,26 +1,33 @@
-<h1>New User</h1>
-<%= form_for(@user) do |form| %>
-<%= render form %>
-  <div class="actions">
-    <%= form.submit 'Create New' %>
-  </div>
-<% end %>
-
-<h1>Log In</h1>
-<%= form_tag login_path, method: 'post' do |form| %>
-    <div id="users_login">
-      <div><%= label_tag :email %></div>
-      <div><%= text_field_tag :email, params[:email] %></div>
-      <div><%= label_tag :password %></div>
-      <div><%= password_field_tag :password, params[:login] %></div>
-      <br>
-      <div><%= submit_tag 'Log In' %></div>
-      <br>
+<div id="landing_header">
+  <div id="landing_logo"><img src="/logo.png"></div>
+</div>
+<div class="left">
+  <h1 class="title">Sign Up</h1>
+  <%= form_for(@user) do |form| %>
+  <%= render form %>
+    <div class="actions">
+      <%= form.submit 'Create New' %>
     </div>
-<% end %>
+  <% end %>
+</div>
+
+<div id="right">
+  <h1 class="title">Log In</h1>
+  <%= form_tag login_path, method: 'post' do |form| %>
+      <div id="users_login">
+        <div><%= label_tag :email %></div>
+        <div><%= text_field_tag :email, params[:email] %></div>
+        <div><%= label_tag :password %></div>
+        <div><%= password_field_tag :password, params[:login] %></div>
+        <br>
+        <div><%= submit_tag 'Log In' %></div>
+        <br>
+      </div>
+  <% end %>
+</div>
 
 
 <%= button_to "LoginWithTwitter", '/users/twitterlogin', method: "get" %>
 
 
-<%= link_to 'Back', users_path %>
+

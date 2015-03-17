@@ -23,6 +23,8 @@
   float: left;
   right: 0;
   width: 400px;
+  position: fixed;
+  margin-right: 50px;
 }
 
 html {
@@ -45,9 +47,9 @@ ul {
 }
 
 .chatArea {
-  background-color: skyblue;
+  background-color: #0099DD;
   padding-bottom: 60px;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
 }
 
 .messages {
@@ -124,4 +126,26 @@ ul {
   bottom: 0;
   width: 100%;
   text-align: center;
+  /*display: none;*/
+}
+
+#user-id {
+  display: none;
+}
+
+
+
+.left {
+  float: left;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.right {
+  float: right;
+  /*padding: 100px;*/
+}
+
+.title {
+  color: #0099DD;
 }

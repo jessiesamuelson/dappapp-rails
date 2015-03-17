@@ -34,7 +34,6 @@ class UsersController < ApplicationController
   end
   
   def twitter_login
-      binding.pry
     if current_user && current_user.oauth_token
       redirect_to "/users/#{current_user.id}"
     else  
