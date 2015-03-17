@@ -1,5 +1,5 @@
-var ws = new WebSocket('ws://localhost:4000');
-// var ws = new WebSocket('ws:will.princesspeach.nyc:7000');
+// var ws = new WebSocket('ws://localhost:4000');
+var ws = new WebSocket('ws:will.princesspeach.nyc:7000');
 
 
 window.onload = function(){
@@ -33,9 +33,9 @@ window.onload = function(){
         var idtext = document.getElementById('user-id').innerHTML.trim();
         var idnum = parseInt(idtext);
         console.log(idnum);
-        var url = "http://localhost:3000/users/" + idnum + ".json"
+        // var url = "http://localhost:3000/users/" + idnum + ".json"
 
-        // var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
+        var url = "http://dapperdragons.herokuapp.com/users/" + idnum + ".json"
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
