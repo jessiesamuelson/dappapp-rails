@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :received_messages, class_name: Message, foreign_key: :recipient_id
 
+  has_many :chatlogs
+
 
 
 	def tweets(opts = {})
